@@ -26,6 +26,13 @@ block content
                         .card-header
                             h3="Status"
                         .card-block
+                            if statusCode != undefined 
+                                h3="StatusCode: " + statusCode
+                                h3="Error: " + error
+                            else
+                                .jumbotron
+                                    center
+                                        h3="Request not done."
 
                 .col-xl-6.col-lg-6.col-md-12.col-sm-12.col-xs-12
                     br
@@ -33,6 +40,10 @@ block content
                         .card-header
                             h3="Result"
                         .card-block
-
-                            .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12.ace_editor.cm-s-pastel-on-dark.CodeMirror
-                                h1="[]"
+                            if body != undefined
+                                .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12.ace_editor.cm-s-pastel-on-dark.CodeMirror
+                                    h5= body
+                            else
+                                .jumbotron
+                                    center
+                                        h3="Request not done."
