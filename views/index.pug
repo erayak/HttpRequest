@@ -2,9 +2,37 @@ extends layout
 
 block content
 
-    .container
+    .container-fuild
 
         .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12
 
             br
-            h3="Hello World !"
+            .card
+                .card-header
+                    h3="Search"
+                .card-block
+                    form( action="/", method="post" )
+                        .row
+                            .col-xl-11.col-lg-11.col-md-12.col-sm-12.col-xs-12
+                                input.form-control( type="text", name="search", placeholder="http://example.com/api/users" )
+                            .col-xl-1.col-lg-1.col-md-12.col-sm-12.col-xs-12.p-0
+                                input.btn.btn-primary( type="submit", value="Request" )
+            
+        .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12
+            .row
+                .col-xl-6.col-lg-6.col-md-12.col-sm-12.col-xs-12
+                    br
+                    .card
+                        .card-header
+                            h3="Status"
+                        .card-block
+
+                .col-xl-6.col-lg-6.col-md-12.col-sm-12.col-xs-12
+                    br
+                    .card
+                        .card-header
+                            h3="Result"
+                        .card-block
+
+                            .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-xs-12.ace_editor.cm-s-pastel-on-dark.CodeMirror
+                                h1="[]"
